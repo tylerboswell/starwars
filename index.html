@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Star Wars RPG</title>
+</head>
+
+<body>
+
+    <div id="bg">
+
+        <!-- Div containing board -->
+        <div id="board">
+            <!-- Title -->
+            <div class="sectionHead" id="title">Star Wars Battle Arena!</div>
+            <!-- Character Selection Area -->
+            <div id="charSelarea" class="clearfix"></div>
+
+            <!-- Available Enemies -->
+            <div class="sectionHead">Enemies Available To Attack</div>
+            <div id='enemies' class="clearfix"></div>
+            <!-- <br> -->
+            <!-- Fight section -->
+            <div class="sectionHead" id="fightArea">
+                <div></div>
+                <button id="attack-btn">Attack</button>
+            </div>
+            <div id="arena" class="clearfix">
+                <!-- Selected Character Area -->
+                <div id="attackerArea" style="float: left;">
+                    <div class="sectionHead">You</div>
+                    <div id="selectedCharacter"></div>
+                </div>
+                <div id="vsSign">VS</div>
+                <!-- Defender Area -->
+                <div id="defenderArea">
+                    <div class="sectionHead">Enemy</div>
+                    <div id="defenderTile"></div>
+
+                </div>
+
+            </div>
+            <div id="atkinfo" class="fightStats"></div>
+            <div id="catkinfo" class="fightStats"></div>
+
+        </div>
+    </div>
+</body>
+<script src="assets/javascript/game.js"></script>
+
+</html>

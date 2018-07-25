@@ -1,0 +1,430 @@
+body, html{
+    height: 100%;
+}
+#board{
+    padding: 2%;
+    
+}
+.clearfix {
+    overflow: auto;
+  }
+#bg { 
+    background-image: url('../images/background.jpg');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sectionHead{
+    color: yellow;
+    padding:1px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+#enemies{
+height: auto;
+}
+#title{  
+    color: yellow;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-left: 50%;
+}
+.charContainer{
+    color:black;
+    font-weight: normal;
+    float: left;
+    font-size: 18px;
+    border: solid 2px green; 
+    height: auto; 
+    width:auto; 
+    background:white;
+    margin: 0px 10px;
+    position:relative;
+    
+}
+.charName{
+    text-align: center;
+}
+.charImage{
+    margin-left:13px;
+    margin-right: 13px;
+    height: 90px; 
+    width:150px;
+}
+.charStats{
+    text-align: center;
+    font-size: 15px;
+}
+.enemy{
+    background: black;
+    border: red solid 2px;
+    color: white;   
+}
+.enemy:hover{
+    background: red;
+    color: white;
+    border: black solid 2px;
+
+}
+.defender{
+    background: red;
+    color: white;
+    border: black solid 2px;
+}
+.fightStats{
+    color: yellow;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+#arena{
+    height: auto;
+    
+}
+#vsSign{
+    margin: 70px 20px 0px 20px;
+    font-size: 40px;
+    border: black 1px solid;
+    background-color: black;
+    color: yellow;
+    float: left;
+
+}
+#selectedCharacter{
+    height: auto;
+}
+button{
+    margin: 3px;
+    background: black;
+    color:white;
+    font-size: 20px;
+}
+button:hover{
+    background: yellow;
+    color: black;
+}
+.charavatar:hover{
+    background: green;
+    color: white;
+}
+ @-webkit-keyframes winnerFlash {
+    0%   { background-color: yellow; color:black;}
+    49% { background-color: yellow; color:black;}
+    50% { background-color: black; color: yellow; }
+    99% { background-color: black; color: yellow;}
+    100% { background-color: yellow; color:black;}
+  }
+  @-moz-keyframes winnerFlash {
+    0%   { background-color: yellow; color:black;}
+    49% { background-color: yellow; color:black;}
+    50% { background-color: black; color: yellow;}
+    99% { background-color: black; color: yellow;}
+    100% { background-color: yellow; color:black;}
+  }
+  @keyframes winnerFlash {
+    0%   { background-color: yellow; color:black;}
+    49% { background-color: yellow; color:black;}
+    50% { background-color: black; color: yellow;}
+    99% { background-color: black; color: yellow;}
+    100% { background-color: yellow; color:black;}
+  }
+  .winner {
+    -webkit-animation: winnerFlash 1s infinite;
+    -moz-animation:    winnerFlash 1s infinite;
+    animation:         winnerFlash 1s infinite;
+    border:0px;
+  }
+  @-webkit-keyframes DMG {
+    0%   { background-color: rgba(255,0,0,.0);}
+    10%   { background-color: rgba(255,0,0,.10);}
+    20%   { background-color: rgba(255,0,0,.20);}
+    30%   { background-color: rgba(255,0,0,.30);}
+    40%   { background-color: rgba(255,0,0,.40);}
+    50% { background-color: rgba(255,0,0,.50);}
+    60% { background-color: rgba(255,0,0,.60);}
+  }
+  @-moz-keyframes DMG {
+    0%   { background-color: rgba(255,0,0,.0);}
+    10%   { background-color: rgba(255,0,0,.10);}
+    20%   { background-color: rgba(255,0,0,.20);}
+    30%   { background-color: rgba(255,0,0,.30);}
+    40%   { background-color: rgba(255,0,0,.40);}
+    50% { background-color: rgba(255,0,0,.50);}
+    60% { background-color: rgba(255,0,0,.60);}
+  }
+  @keyframes DMG {
+    0%   { background-color: rgba(255,0,0,.0);}
+    10%   { background-color: rgba(255,0,0,.10);}
+    20%   { background-color: rgba(255,0,0,.20);}
+    30%   { background-color: rgba(255,0,0,.30);}
+    40%   { background-color: rgba(255,0,0,.40);}
+    50% { background-color: rgba(255,0,0,.50);}
+    60% { background-color: rgba(255,0,0,.60);}
+  }
+  .damageOverlay{
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    -webkit-animation: DMG 1s;
+    -moz-animation:    DMG 1s;
+    animation:         DMG 1s;
+  }
+  @-webkit-keyframes Loser {
+    0%   {transform: scale(1);}
+    10%  {transform: scale(0.9);}
+    20%  {transform: scale(0.8);}
+    30%  {transform: scale(0.7);}
+    40%  {transform: scale(0.6);}
+    50%  {transform: scale(0.5);}
+    60%  {transform: scale(0.4);}
+    70%  {transform: scale(0.3);}
+    80%  {transform: scale(0.2);}
+    90%  {transform: scale(0.1);}
+    100% {transform: scale(0);}
+  }
+  @-moz-keyframes Loser {
+    0%   {transform: scale(1);}
+    10%  {transform: scale(0.9);}
+    20%  {transform: scale(0.8);}
+    30%  {transform: scale(0.7);}
+    40%  {transform: scale(0.6);}
+    50%  {transform: scale(0.5);}
+    60%  {transform: scale(0.4);}
+    70%  {transform: scale(0.3);}
+    80%  {transform: scale(0.2);}
+    90%  {transform: scale(0.1);}
+    100% {transform: scale(0);}
+  }
+  @keyframes Loser {
+    0%   {transform: scale(1);}
+    10%  {transform: scale(0.9);}
+    20%  {transform: scale(0.8);}
+    30%  {transform: scale(0.7);}
+    40%  {transform: scale(0.6);}
+    50%  {transform: scale(0.5);}
+    60%  {transform: scale(0.4);}
+    70%  {transform: scale(0.3);}
+    80%  {transform: scale(0.2);}
+    90%  {transform: scale(0.1);}
+    100% {transform: scale(0);}
+  }
+  .loser{
+    -webkit-animation: Loser 1s;
+    -moz-animation:    Loser 1s;
+    animation:         Loser 1s;
+  }
+  @media screen and (max-width: 640px) {
+        body, html{
+            height: 100%;
+        }
+        #board{
+            padding: 2%;
+        }
+        
+        .clearfix {
+            overflow: auto;
+          }
+        #bg { 
+            background-image: url('../images/Background_img.jpg');
+            height: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .sectionHead{
+            color: yellow;
+            padding:1px;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        
+        }
+        #title{  
+            color: yellow;
+            font-weight: bolder;
+            font-size: 30px;
+            margin-left: 50%;
+        }
+        .charContainer{
+            color:black;
+            font-weight: normal;
+            float: left;
+            font-size: 18px;
+            border: solid 2px green; 
+            height: auto; 
+            width:auto; 
+            background:white;
+            margin: 0px 10px;
+            padding:3px;
+            position:relative;
+            
+        }
+        .charName{
+            text-align: center;
+        }
+        .charImage{
+            margin-left:13px;
+            height: 75px; 
+            width: 125px;
+        }
+        img{
+            height:50px;
+            width:125px;
+
+        }
+
+        .charStats{
+            text-align: center;
+            font-size: 15px;
+        }
+        .enemy{
+            background: black;
+            border: red solid 2px;
+            color: white;   
+        }
+        .enemy:hover{
+            background: red;
+            color: white;
+            border: black solid 2px;
+        
+        }
+        .defender{
+            background: red;
+            color: white;
+            border: black solid 2px;
+        }
+        .fightStats{
+            color: yellow;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        
+        }
+        #arena{
+            height: auto;
+            
+        }
+        #vsSign{
+            margin: 35px 10px 0px 10px;
+            font-size: 20px;
+            border: black 1px solid;
+            background-color: black;
+            color: yellow;
+        
+        }
+        #selectedCharacter{
+            height: 5%;
+        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body, html{
+        height: 100%;
+    }
+    #board{
+        padding: 2%;
+        
+    }
+    .clearfix {
+        overflow: auto;
+      }
+    #bg { 
+        background-image: url('../images/Background_img.jpg');
+        height: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .sectionHead{
+        color: yellow;
+        padding:1px;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+    }
+    #title{  
+        color: yellow;
+        font-weight: bolder;
+        font-size: 25px;
+        margin-left: 50%;
+    }
+    .charContainer{
+        color:black;
+        font-weight: normal;
+        float: left;
+        font-size: 18px;
+        border: solid 2px green; 
+        height: auto; 
+        width:auto; 
+        background:white;
+        margin: 0px 5px;
+        padding:3px;
+        position:relative;
+        
+    }
+    .charName{
+        text-align: center;
+    }
+    .charImage{
+        margin-left:15px;
+        height: 45px; 
+        width:75px;
+    }
+    img{
+        height:45px;
+        width:75px;
+
+    }
+    .charStats{
+        text-align: center;
+        font-size: 15px;
+    }
+    .enemy{
+        background: black;
+        border: red solid 2px;
+        color: white;   
+    }
+    .enemy:hover{
+        background: red;
+        color: white;
+        border: black solid 2px;
+    
+    }
+    .defender{
+        background: red;
+        color: white;
+        border: black solid 2px;
+    }
+    .fightStats{
+        color: yellow;
+        font-size: 16px;
+        font-weight: bold;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+    }
+    #arena{
+        height: auto;
+        
+    }
+    #vsSign{
+        margin: 17px 5px 0px 5px;
+        font-size: 20px;
+        border: black 1px solid;
+        background-color: black;
+        color: yellow;
+    
+    }
+    #selectedCharacter{
+        height: auto;
+    
+}
+
+}

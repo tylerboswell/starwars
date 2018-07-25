@@ -52,7 +52,7 @@ height: auto;
     margin-left:13px;
     margin-right: 13px;
     height: 90px; 
-    width:150px;
+    width: 150px;
 }
 .charStats{
     text-align: center;
@@ -271,11 +271,11 @@ button:hover{
         .charImage{
             margin-left:13px;
             height: 75px; 
-            width: 125px;
+            width: 100px;
         }
         img{
             height:50px;
-            width:125px;
+            width:100px;
 
         }
 
